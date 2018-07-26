@@ -1,0 +1,86 @@
+{% extends "layouts/base.html" %}
+{% block content %}  
+
+            <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Profile</h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Hi, {{ request.session.username }}</h2>
+                    
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                      <div class="table-responsive">
+                                        <table class="table table-bordered table-hover table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width:450px;">Name</td>
+                                                    <td style="width:10px;">:</td>
+                                                    <td>{{ worker.name }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Address</td>
+                                                    <td style="width:10px;">:</td>
+                                                    <td>{{ worker.address }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gender</td>
+                                                    <td style="width:10px;">:</td>
+                                                    <td>{{ worker.gender_type }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Employee Status</td>
+                                                    <td style="width:10px;">:</td>
+                                                    <td>{{ worker.worker_type }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Phonenumber</td>
+                                                    <td style="width:10px;">:</td>
+                                                    <td>{{ worker.phonenumber }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>E-mail</td>
+                                                    <td style="width:10px;">:</td>
+                                                    <td>{{ worker.email }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Department</td>
+                                                    <td style="width:10px;">:</td>
+                                                    <td>{{ worker.department.name }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Position</td>
+                                                    <td style="width:10px;">:</td>
+                                                    <td>{{ worker.position.name }}</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.table-responsive -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}

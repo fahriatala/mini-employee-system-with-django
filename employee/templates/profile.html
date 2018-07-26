@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<htmL>
+    <head>
+        <title>Mini HRD</title>
+    </head>
+    <body>
+        <h1>Silahkan Login</h1>
+        <form>
+            <h1>Profil Anda ({{ request.session.account_type }})</h1>
+            <p>Hi, {{ request.session.name }}</p>
+            <p>Name: {{ employee.name }}</p>
+            <p>Address: {{ employee.address }}</p>
+            <p>Gender: {{ employee.gender_type }}</p>
+            <p>Employee Status: {{ employee.worker_type }}</p>
+            <p>Phonenumber: {{ employee.phonenumber }}</p>
+            <p>Email: {{ employee.email }}</p>
+            <p>Department: {{ employee.department.name }}</p>
+            <p>Position: {{ employee.position.name }}</p>
+            <p><a href="/logout/">Log out</a> | <a href="/presence_list/">Presence</a></p>
+        </form>
+    </body>
+</htmL>

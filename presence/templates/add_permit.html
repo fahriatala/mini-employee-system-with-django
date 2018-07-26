@@ -1,0 +1,123 @@
+{% extends "layouts/base.html" %}
+{% block content %}      
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  
+                  <div class="x_content">
+                    <br />
+                    <form data-parsley-validate class="form-horizontal form-label-left" method="POST" action="/permit_application/">
+                      {% csrf_token %}
+                   <!--  -->
+                      <div class="panel-body">
+                            {% if form.errors %}
+                                <div class="alert alert-danger alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    {{ form.errors }}
+                                </div>
+                            {% endif %}
+
+
+                      
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">{{ form.presence_type.label }} <span class="required">*</span>
+                        </label>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                          <select style="width:500px;" name="presence_type" class="itemName form-control col-md-7 col-xs-12"></select>
+                        </div>
+                      </div>
+
+                       <script type="text/javascript">
+
+                             $('.itemName').select2({
+                                placeholder: 'Select an item',
+                                ajax: {
+                                  url: '/presence_list2/',
+                                  dataType: 'json',
+                                  delay: 250,
+                                  processResults: function (data) {
+                                    return {
+                                      results:  $.map(data.data, function (item) {
+                                            return {
+                                                text: item.nama,
+                                                id: item.id
+                                            }
+                                        })
+                                    };
+                                  },
+                                  cache: true
+                                }
+                              });
+
+
+                        </script>
+
+                      
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">{{ form.begin_time.label }} <span class="required">*</span>
+                        </label>
+                        <div class='col-md-6 col-sm-6 col-xs-12'>
+                            <div class='input-group date' id='datetimepicker4'>
+                            <!-- <input type='text' class="form-control" name="birthdate" /> -->
+                            <input class="form-control" type="text" name="begin_time">
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                            </div>
+                            <script type="text/javascript">
+                              $(function() {              
+                              // Bootstrap DateTimePicker v4
+                              $('#datetimepicker4').datetimepicker({
+                                format: 'YYYY-MM-DD'
+                                  });
+                              });      
+                            </script>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">{{ form.end_time.label }} <span class="required">*</span>
+                        </label>
+                        <!-- {{ form.end_time }} -->
+                        <div class='col-md-6 col-sm-6 col-xs-12'>
+                            <div class='input-group date' id='datetimepicker5'>
+                            <!-- <input type='text' class="form-control" name="birthdate" /> -->
+                            <input class="form-control" type="text" name="end_time">
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                            </div>
+                            <script type="text/javascript">
+                              $(function() {              
+                              // Bootstrap DateTimePicker v4
+                              $('#datetimepicker5').datetimepicker({
+                                format: 'YYYY-MM-DD'
+                                  });
+                              });      
+                            </script>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">{{ form.reason.label }}</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="reason">
+                        </div>
+                      </div>
+
+
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-primary" type="button">Cancel</button>
+                          <button class="btn btn-primary" type="reset">Reset</button>
+                          <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                      </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+      
+{% endblock %}
