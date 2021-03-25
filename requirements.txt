@@ -9,7 +9,7 @@ PAM==0.4.2
 Pillow==2.3.0
 PyJWT==1.6.4
 PyQRCode==1.2.1
-PyYAML==3.10
+PyYAML==5.4
 Pygments==2.2.0
 SecretStorage==2.0.0
 SwampDragon==0.4.2.2
