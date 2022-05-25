@@ -7,7 +7,7 @@ MarkupSafe==0.23
 MySQL-python==1.2.3
 PAM==0.4.2
 Pillow==2.3.0
-PyJWT==1.6.4
+PyJWT==2.4.0
 PyQRCode==1.2.1
 PyYAML==3.10
 Pygments==2.2.0
