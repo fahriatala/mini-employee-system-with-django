@@ -118,7 +118,7 @@ pytz==2017.2
 pyxdg==0.25
 rabbitvcs==0.16.0
 redis==2.10.5
-reportlab==3.0
+reportlab==3.5.55
 requests==2.2.1
 sendgrid==3.6.5
 sendgrid-django==4.1.0
