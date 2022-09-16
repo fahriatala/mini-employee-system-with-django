@@ -15,7 +15,7 @@ SecretStorage==2.0.0
 SwampDragon==0.4.2.2
 Twisted-Core==13.2.0
 Twisted-Web==13.2.0
-VTK==5.8.0
+VTK==9.0.1
 Werkzeug==0.11.11
 XlsxWriter==0.9.3
 adium-theme-ubuntu==0.3.4
