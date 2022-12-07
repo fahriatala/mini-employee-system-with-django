@@ -26,7 +26,7 @@ backports-abc==0.4
 backports.ssl-match-hostname==3.5.0.1
 boto==2.20.1
 bzr==2.7.0.dev1
-certifi==2016.9.26
+certifi==2022.12.7
 cffi==1.8.3
 chardet==2.0.1
 click==6.6
